@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: hugo
   author: Jared Hocutt
   description: Adds the Hugo yum repository and installs Hugo.
 
