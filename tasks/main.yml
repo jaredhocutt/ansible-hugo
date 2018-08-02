@@ -1,0 +1,18 @@
+---
+
+- name: Create yum repository
+  yum_repository:
+    name: daftaupe-hugo
+    description: "[COPR] Hugo - $basearch"
+    baseurl: https://copr-be.cloud.fedoraproject.org/results/daftaupe/hugo/fedora-$releasever-$basearch/
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://copr-be.cloud.fedoraproject.org/results/daftaupe/hugo/pubkey.gpg
+    state: present
+  become: yes
+
+- name: Install hugo
+  dnf:
+    name: hugo
+    state: present
+  become: yes
